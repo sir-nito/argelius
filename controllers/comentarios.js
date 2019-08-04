@@ -1,8 +1,6 @@
 'use strict'
 
 var Comentarios = require('../models/comentarios');
-var User = require('../../system-23/api/models/user');
-var Place = require('../../system-23/api/models/place');
 var path = require('path');
 var fs = require('fs');
 var moment= require('moment');
