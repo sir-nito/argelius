@@ -1,0 +1,28 @@
+{
+  "name": "miapi",
+  "version": "1.0.0",
+  "description": "api para enviar video y musica",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "francisco javier peña fabian",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.6",
+    "mongoose-pagination": "^1.0.0",
+    "mysql2": "^1.6.5",
+    "nodemailer": "^6.3.0",
+    "sequelize": "^5.10.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
