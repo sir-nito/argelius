@@ -6,11 +6,11 @@ var middleware = require('../middlewares/authenticated');
 var multipart = require('connect-multiparty');
 var md_upload= multipart({uploadDir:'../uploads/usuario'});
 
-api.post('/registrar',AdminController.Registrar);
-api.get('/validar/:id',AdminController.validarcuenta);
-api.post('/Iniciar-Sesion',AdminController.IniciarSession);
-api.get('/usuario/:id', middleware.ensureAuth, AdminController.getUser);
-api.put('/Actualizar-usuario/:id', middleware.ensureAuth, AdminController.updateUser);
-api.post('/subir-imagen/:id', [middleware.ensureAuth,md_upload], AdminController.uploadImage);
-api.get('/obtener-imagen/:imageFile',AdminController.getImageFile);
+api.post('/A_registrar',AdminController.Registrar);
+api.get('/A_validar/:id',AdminController.validarcuenta);
+api.post('/A_Iniciar-Sesion',AdminController.IniciarSession);
+api.get('/A_usuario/:id', middleware.ensureAuth, AdminController.getUser);
+api.put('/A_Actualizar-usuario/:id', middleware.ensureAuth, AdminController.updateUser);
+api.post('/A_subir-imagen/:id', [middleware.ensureAuth,md_upload], AdminController.uploadImage);
+api.get('/A_obtener-imagen/:imageFile',AdminController.getImageFile);
 module.exports=api;

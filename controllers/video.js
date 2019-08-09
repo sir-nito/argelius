@@ -12,7 +12,7 @@ function saveVideo(req,res){
     var video = new Video(); 
     if(!params.nombre && !params.descripcion && !params.categoria && !params.direccion && !params.horario ) res.status(200).send({mesage:'debes mandar los datos completos del producto'});
     
-    video.nombre = params.name;
+    video.nombre = params.nombre;
     video.descripcion = params.descripcion;
     video.imagen = '';
     video.video = '';
@@ -54,23 +54,21 @@ function saveVideo(req,res){
          });
      });
 }
+function getVideoMovil(req,res){
+    Video.find((err,video) =>{
+        if(err) return res.status(500).send({message:'error en tu peticion'});
+        if(!video) return res.status(500).send({message:'no exitsen datos '});
+        if(video) return res.status(200).send({Video:video});
+    });
+}
     function Videoid(req,res){
         var id = req.params.id;
-        var page=1;
-        
-   var itemsPerPage=6;
-        Video.findById(id).sort('created_at').populate('Video').paginate(page,itemsPerPage,
-            (err,videos,total)=>{
+        Video.findById(id,(err,videos)=>{
  if(err) return res.status(500).send({message:'error en la peticion'});
  
  if(!videos) return res.status(404).send({message:'no hay lugares disponibles'});
 
- return res.status(200).send({
-     total_items:total,
-     pages:Math.ceil(total/itemsPerPage),
-     page:page,
-     items_per_page:itemsPerPage,
-      videos
+ return res.status(200).send({vides:videos
  });
 });
      }
@@ -187,6 +185,7 @@ module.exports = {
     getImageFile,
     Videoid,
     uploadVideo,
-    getImageVideo
+    getImageVideo,
+    getVideoMovil
     
 }

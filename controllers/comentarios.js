@@ -1,8 +1,6 @@
 'use strict'
 
 var Comentarios = require('../models/comentarios');
-var User = require('../../system-23/api/models/user');
-var Place = require('../../system-23/api/models/place');
 var path = require('path');
 var fs = require('fs');
 var moment= require('moment');
@@ -49,10 +47,22 @@ function getComentarios(req,res){
          });
      });
 }
+function getComentariosMovil(req,res){
+    var id = req.params.id;
+ Comentarios.find({video:id},(err,comentarios)=>{
+         if(err) return res.status(500).send({message:'error en la peticion'});
+         
+         if(!comentarios) return res.status(404).send({message:'no hay lugares disponibles'});
+     
+         return res.status(200).send({comentario:comentarios
+         });
+     });
+}
 
 
 
 module.exports= {
     sendComentario,
-    getComentarios
+    getComentarios,
+    getComentariosMovil
 }

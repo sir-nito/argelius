@@ -6,7 +6,7 @@ var middleware = require('../middlewares/authenticated');
 var multipart = require('connect-multiparty');
 var md_upload= multipart({uploadDir:'../uploads/usuario'});
 
-api.post('/registrar',UserController.Registrar);
+api.post('/registrar_usuario',UserController.Registrar);
 api.get('/validar/:id',UserController.validarcuenta);
 api.post('/Iniciar-Sesion',UserController.IniciarSession);
 api.get('/user/:id', middleware.ensureAuth, UserController.getUser);
