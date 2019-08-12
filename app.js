@@ -31,7 +31,7 @@ app.use('/api',user_routes);
 app.use('/api',admin_routes);
 app.use('/api',comentarios_routes);
 app.use('/api',lista_routes);
-app.use('/api',video_routes)
+app.use('/api',video_routes);
 ///exportar
 
 module.exports =app;
