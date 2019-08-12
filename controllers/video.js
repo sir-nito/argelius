@@ -55,7 +55,7 @@ function saveVideo(req,res){
      });
 }
 function getVideoMovil(req,res){
-    Video.find().populate('_id',(err,video) =>{
+    Video.find(,(err,video) =>{
         if(err) return res.status(500).send({message:'error en tu peticion'});
         if(!video) return res.status(500).send({message:'no exitsen datos '});
         if(video) return res.status(200).send({Video:video});
