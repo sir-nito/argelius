@@ -93,7 +93,7 @@ function deleteVideo(req,res){
         if(file_ext=='png' || file_ext=='jpg' || file_ext=='jpeg' ||file_ext == 'gif'){
            //actualizaremos documento de usuario
             
-                   Video.findByIdAndUpdate(placeId,{file:file_name},{new:true},(err,videoUpdate)=>{
+                   Video.findByIdAndUpdate(placeId,{imagen:file_name},{new:true},(err,videoUpdate)=>{
                 if(err) return res.status(500).send({message:'Error en la paticion verifique'});
             
             if(!videoUpdate) return res.status(404).send({message:'no se ha podido actualizar'});
