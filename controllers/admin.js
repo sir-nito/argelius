@@ -62,7 +62,7 @@ function Registrar (req,res){
                             to: usuario.correo,
                             subject: 'validacion de la cuenta',
                             text: 'binevenido a sisvis por favor vaya al link',
-                            html:'<href>http://167.71.90.191:2552/api/validar/'+userStored._id+'</href>'
+                            html:'<href>http://52.168.24.67:2552/api/validar/'+userStored._id+'</href>'
                           };
                           
                           transporter.sendMail(mailOptions, function(error, info){
@@ -93,7 +93,7 @@ function validarcuenta(req,res){
     User.findByIdAndUpdate(userId,{status:'ACTIVADA'},{new:true},(err,userUpdated)=>{
         if(err) return res.status(500).send({messsage:'error en la peticion'});
         if(!userUpdated) return res.status(404).send({message:'no se ha podido acutalizar'});    
-        return res.location('http://sisvis.com');         
+        return res.location('http://cafeteria-teschi.com');         
         
     });
 }
