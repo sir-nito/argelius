@@ -62,7 +62,7 @@ function Registrar (req,res){
                             to: usuario.correo,
                             subject: 'validacion de la cuenta',
                             text: 'binevenido a sisvis por favor vaya al link',
-                            html:'<href>http://52.168.24.67:2552/api/validar/'+userStored._id+'</href>'
+                            html:'<href>http://40.121.70.23:2552/api/validar/'+userStored._id+'</href>'
                           };
                           
                           transporter.sendMail(mailOptions, function(error, info){
