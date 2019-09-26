@@ -4,7 +4,7 @@ var UserController = require('../controllers/user');
 var api= express.Router();
 var middleware = require('../middlewares/authenticated');
 var multipart = require('connect-multiparty');
-var md_upload= multipart({uploadDir:'../uploads/usuario'});
+var md_upload= multipart({uploadDir:'./uploads/usuario'});
 
 api.post('/registrar_usuario',UserController.Registrar);
 api.get('/validar/:id',UserController.validarcuenta);
