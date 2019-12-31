@@ -19,9 +19,9 @@ app.disable('x-powered-by');
 
 //cors
 // configurar cabeceras http
-app.use("/v1", subpath );
+app.use("/v1", subpath);
 
-var swagger = require('swagger-node-express').createNew(subpath );
+var swagger = require('swagger-node-express').createNew(subpath);
 app.use(express.static('dist'));
 swagger.setApiInfo({
     title: "Argelius api rest full",
@@ -46,7 +46,7 @@ app.get('/', function(req, res) {
 swagger.configureSwaggerPaths('', 'api-docs', '');
 
 // Configure the API domain
-var domain = 'localhost';
+var domain = '40.117.253.59';
 if (argv.domain !== undefined)
     domain = argv.domain;
 else
