@@ -69,6 +69,7 @@ swagger.configure(applicationUrl, '1.0.0');
 
 // Start the web server
 app.listen(port);
+app.use('/static', express.static('dist/api-docs.json'));
 app.use('/api', user_routes);
 app.use('/api', admin_routes);
 app.use('/api', comentarios_routes);
