@@ -3,15 +3,38 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var VideoSchema = Schema({
-    categoria:String,
-    nombre:String,
-    descripcion:String,
-    imagen:String,
-    video:String,
-    direccion:String,
-    horario:String,
-    url:String,
-    create_at:String
+    nombre: {
+        type: String,
+        require: true
+    },
+    descripcion: {
+        type: String,
+        require: true
+    },
+    imagen: {
+        type: String,
+    },
+    video: {
+        type: String,
+    },
+    direccion: {
+        type: String,
+        require: true
+    },
+    horario: {
+        type: String,
+        require: true
+    },
+    url: {
+        type: String,
+        require: true
+    },
+    create_at: {
+        type: String,
+    },
+    categoria: {
+        type: { type: Schema.ObjectId, ref: 'Categoria' }
+    }
 });
 
-module.exports = mongoose.model('Video',VideoSchema);
+module.exports = mongoose.model('Place', VideoSchema);
