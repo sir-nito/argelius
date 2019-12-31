@@ -12,7 +12,7 @@
         "description": "API for something"
     }],
     "schemes": [
-        "https"
+        "http"
     ],
     "consumes": [
         "application/json"
