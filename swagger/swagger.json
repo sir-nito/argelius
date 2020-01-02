@@ -3,14 +3,10 @@
     "info": {
         "version": "1.0.0",
         "title": "Sample spec",
-        "description": "Sample spec for Swagger",
-        "termsOfService": "http://swagger.io/terms/"
+        "description": "crud de pruebas"
     },
-    "basePath": "/",
-    "tags": [{
-        "name": "Tag1",
-        "description": "API for something"
-    }],
+    "host ": "http://40.117.253.59:2552",
+    "basePath": "/api",
     "schemes": [
         "http"
     ],
@@ -21,9 +17,9 @@
         "application/json"
     ],
     "paths": {
-        "/path/to/method": {
+        "/registrar": {
             "post": {
-                "tags": ["Tag1"],
+                "tags": ["usuario"],
                 "description": "what this API does",
                 "operationId": "for the URL",
                 "produces": [
@@ -35,14 +31,14 @@
                     "description": "Job to add to the database",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/create"
+                        "$ref": "#/definitions/usuario"
                     }
                 }],
                 "responses": {
                     "200": {
                         "description": "create response",
                         "schema": {
-                            "$ref": "#/definitions/response"
+                            "$ref": "#/definitions/userID"
                         }
                     }
                 }
@@ -98,30 +94,34 @@
         }
     },
     "definitions": {
-        "create": {
+        "usuario": {
+            "type": "object",
             "properties": {
-                "eventId": {
-                    "required": true,
-                    "type": "string",
-                    "example": "mathmaticial"
+                "nombre": {
+                    "Type": "string"
                 },
-                "numberRequired": {
-                    "required": true,
-                    "type": "integer",
-                    "format": "int64",
-                    "example": 500
+                "apellido_paterno": {
+                    "type": "string"
+                },
+                "apellido_materno": {
+                    "type": "string"
+                },
+                "edad": {
+                    "type": "integer"
+                },
+                "correo": {
+                    "type": "string"
                 }
             }
         },
         "response1": {
             "properties": {
-                "jobID": {
-                    "required": true,
+                "res": {
                     "type": "string",
                     "example": "23423456543"
                 },
                 "request": {
-                    "required": true,
+
                     "type": "schema",
                     "example": {
                         "eventId": "mathmaticial",
@@ -132,10 +132,22 @@
         },
         "response": {
             "properties": {
-                "jobID": {
-                    "required": true,
-                    "type": "string",
-                    "example": "12321432423"
+                "userID": {
+                    "nombre": {
+                        "Type": "string"
+                    },
+                    "apellido_paterno": {
+                        "type": "string"
+                    },
+                    "apellido_materno": {
+                        "type": "string"
+                    },
+                    "edad": {
+                        "type": "integer"
+                    },
+                    "correo": {
+                        "type": "string"
+                    }
                 }
             }
         },
