@@ -8,7 +8,7 @@ var md_upload = multipart({ uploadDir: './uploads/usuario' });
 
 api.post('/registrar', UserController.agregar);
 //api.get('/usuario/:id', middleware.ensureAuth, UserController.getUser);
-api.put('/actualizar/:id', middleware.ensureAuth, UserController.actualizar);
-api.get('/obtener-usuarios', middleware.ensureAuth, UserController.obtener);
-api.delete('/eliminar/:id', middleware.ensureAuth, UserController.eliminar);
+api.put('/actualizar/:id', UserController.actualizar);
+api.get('/obtener-usuarios', UserController.obtener);
+api.delete('/eliminar/:id', UserController.eliminar);
 module.exports = api;

@@ -38,22 +38,21 @@
                     "200": {
                         "description": "create response",
                         "schema": {
-                            "$ref": "#/definitions/userID"
+                            "$ref": "#/definitions/usuario"
                         }
                     }
                 }
             }
         },
-        "/path/to/method/{someVariable}": {
+        "/eliminar/{ID}": {
             "delete": {
-                "tags": ["Tag1"],
                 "description": "Deletes a something",
                 "operationId": "delete",
                 "produces": [
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "someVariable",
+                    "name": "ID",
                     "in": "path",
                     "description": "ID to delete",
                     "required": true,
@@ -67,9 +66,10 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/obtener-usuarios": {
             "get": {
-                "tags": ["Tag1"],
                 "description": "Returns the status of something",
                 "operationId": "findById",
                 "produces": [
@@ -78,18 +78,29 @@
                 "parameters": [{
                     "name": "ID",
                     "in": "path",
-                    "description": "ID to fetch",
-                    "required": true,
-                    "type": "string"
+                    "description": "ID ",
+                    "type": "integer"
                 }],
                 "responses": {
                     "200": {
                         "description": "response",
                         "schema": {
-                            "$ref": "#/definitions/response1"
+                            "$ref": "#/definitions/getRes"
                         }
                     }
                 }
+            }
+        },
+        "actualizar/{ID}": {
+            "put": {
+
+                "parameters": [{
+                    "name": "ID",
+                    "in": "path",
+                    "description": "ID to delete",
+                    "required": true,
+                    "type": "string"
+                }]
             }
         }
     },
@@ -98,7 +109,7 @@
             "type": "object",
             "properties": {
                 "nombre": {
-                    "Type": "string"
+                    "type": "string"
                 },
                 "apellido_paterno": {
                     "type": "string"
@@ -114,54 +125,36 @@
                 }
             }
         },
-        "response1": {
-            "properties": {
-                "res": {
-                    "type": "string",
-                    "example": "23423456543"
-                },
-                "request": {
 
-                    "type": "schema",
-                    "example": {
-                        "eventId": "mathmaticial",
-                        "numberRequired": 500
-                    }
-                }
-            }
-        },
-        "response": {
-            "properties": {
-                "userID": {
-                    "nombre": {
-                        "Type": "string"
-                    },
-                    "apellido_paterno": {
-                        "type": "string"
-                    },
-                    "apellido_materno": {
-                        "type": "string"
-                    },
-                    "edad": {
-                        "type": "integer"
-                    },
-                    "correo": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "delete": {
+        "deleteRes": {
             "properties": {
                 "jobID": {
-                    "required": true,
                     "type": "string",
                     "example": "234344234234"
                 },
                 "status": {
-                    "required": true,
                     "type": "string",
                     "example": "deleted"
+                }
+            }
+        },
+        "getRes": {
+            "type": "array",
+            "properties": {
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_paterno": {
+                    "type": "string"
+                },
+                "apellido_materno": {
+                    "type": "string"
+                },
+                "edad": {
+                    "type": "integer"
+                },
+                "correo": {
+                    "type": "string"
                 }
             }
         },
