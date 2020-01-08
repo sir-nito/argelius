@@ -44,6 +44,34 @@
                 }
             }
         },
+        "/Iniciar-Sesion": {
+            "post": {
+                "tags": ["lginUsuario"],
+                "description": "what this API does",
+                "operationId": "for the URL",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "Job Parameters",
+                    "in": "body",
+                    "description": "Job to add to the database",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/loginUsuario"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "create response",
+                        "schema": {
+                            "$ref": "#/definitions/Res"
+                        }
+                    }
+                }
+            }
+        },
+
         "/eliminar/{ID}": {
             "delete": {
                 "description": "Deletes a something",
@@ -91,7 +119,7 @@
                 }
             }
         },
-        "actualizar/{ID}": {
+        "/actualizar/{ID}": {
             "put": {
 
                 "parameters": [{
@@ -125,7 +153,21 @@
                 }
             }
         },
+        "loginUsuario": {
+            "type": "object",
+            "properties": {
+                "correo": {
+                    "type": "string"
+                },
+                "passowrd": {
+                    "type": "string"
+                },
+                "gettoken": {
+                    "type": true
 
+                }
+            }
+        },
         "deleteRes": {
             "properties": {
                 "jobID": {
@@ -135,6 +177,18 @@
                 "status": {
                     "type": "string",
                     "example": "deleted"
+                }
+            }
+        },
+        "Res": {
+            "properties": {
+                "jobID": {
+                    "type": "string",
+                    "example": "iobounñpuobñoiugvhil"
+                },
+                "status": {
+                    "type": "string",
+                    "example": "token"
                 }
             }
         },
