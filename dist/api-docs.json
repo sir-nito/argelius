@@ -159,11 +159,11 @@
                 "correo": {
                     "type": "string"
                 },
-                "passowrd": {
+                "password": {
                     "type": "string"
                 },
                 "gettoken": {
-                    "type": true
+                    "type": "true"
 
                 }
             }
