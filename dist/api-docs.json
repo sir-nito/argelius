@@ -21,6 +21,7 @@
             "post": {
                 "tags": ["usuario"],
                 "description": "what this API does", 
+                "operationId": "register",
                 "produces": [
                     "application/json"
                 ],
@@ -47,6 +48,7 @@
             "post": {
                 "tags": ["lginUsuario"],
                 "description": "what this API does",
+                "operationId": "login",
                 "produces": [
                     "application/json"
                 ],
