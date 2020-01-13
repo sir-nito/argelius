@@ -107,7 +107,7 @@
                     "name": "pag",
                     "in": "path",
                     "description": "path", 
-                    "required" :true, 
+                    "required" :false, 
                     "type": "integer"
                 }],
                 "responses": {
