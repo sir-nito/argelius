@@ -1,3 +1,4 @@
+
 {
     "swagger": "2.0",
     "info": {
@@ -72,7 +73,7 @@
             }
         },
 
-        "/eliminar/{ID}": {
+        "/eliminar/{id}": {
             "delete": {
                 "description": "Deletes a something",
                 "operationId": "delete",
@@ -80,11 +81,11 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "ID",
+                    "name": "id",
                     "in": "path",
-                    "description": "ID to delete",
+                    "description": "ID to remove",
                     "required": true,
-                    "type": "string"
+                    "type": "integer"
                 }],
                 "responses": {
                     "200": {
@@ -96,7 +97,7 @@
                 }
             }
         },
-        "/obtener-usuarios": {
+        "/obtener-usuarios/{pag}": {
             "get": {
                 "description": "Returns the status of something",
                 "operationId": "findById",
@@ -104,10 +105,10 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "ID",
+                    "name": "pag",
                     "in": "path",
-                    "description": "ID ",
-                    "type": "intger"
+                    "description": "pah",
+                    "type": "integer"
                 }],
                 "responses": {
                     "200": {
@@ -119,16 +120,25 @@
                 }
             }
         },
-        "/actualizar/{ID}": {
+        "/actualizar/{idUsuario}": {
             "put": {
 
                 "parameters": [{
-                    "name": "ID",
+                    "name": "idUsuario",
                     "in": "path",
-                    "description": "ID to delete",
+                    "description": "ID e",
                     "required": true,
-                    "type": "string"
-                }]
+                    "type": "integer"
+                }],
+              "responses":{
+                "200":{
+                "description":"response",
+                  "schema":{
+                    "ref":"#definitions/usuario"
+
+                  }
+              }
+              }
             }
         }
     },
