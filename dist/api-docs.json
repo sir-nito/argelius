@@ -20,8 +20,7 @@
         "/registrar": {
             "post": {
                 "tags": ["usuario"],
-                "description": "what this API does",
-                "operationId": "for the URL",
+                "description": "what this API does", 
                 "produces": [
                     "application/json"
                 ],
@@ -48,7 +47,6 @@
             "post": {
                 "tags": ["lginUsuario"],
                 "description": "what this API does",
-                "operationId": "for the URL",
                 "produces": [
                     "application/json"
                 ],
