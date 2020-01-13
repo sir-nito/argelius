@@ -106,7 +106,8 @@
                 "parameters": [{
                     "name": "pag",
                     "in": "path",
-                    "description": "pah",
+                    "description": "path", 
+                    "requiere" :true, 
                     "type": "integer"
                 }],
                 "responses": {
@@ -133,7 +134,7 @@
                 "200":{
                 "description":"response",
                   "schema":{
-                    "ref":"#definitions/usuario"
+                    "$ref":"#definitions/usuario"
 
                   }
               }
@@ -172,7 +173,7 @@
                     "type": "string"
                 },
                 "gettoken": {
-                    "type": "true"
+                    "type": "string"
 
                 }
             }
