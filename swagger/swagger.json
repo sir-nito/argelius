@@ -107,7 +107,7 @@
                     "name": "pag",
                     "in": "path",
                     "description": "path", 
-                    "requiered" :true, 
+                    "required" :true, 
                     "type": "integer"
                 }],
                 "responses": {
@@ -203,7 +203,9 @@
             }
         },
         "getRes": {
-            "type": "array",
+            "type": "array", 
+            "items" :{
+            "type" :"object", 
             "properties": {
                 "nombre": {
                     "type": "string"
@@ -220,6 +222,7 @@
                 "correo": {
                     "type": "string"
                 }
+              } 
             }
         },
         "400error": {
