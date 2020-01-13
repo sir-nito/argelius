@@ -107,7 +107,7 @@
                     "name": "pag",
                     "in": "path",
                     "description": "path", 
-                    "requiere" :true, 
+                    "requiered" :true, 
                     "type": "integer"
                 }],
                 "responses": {
@@ -134,7 +134,7 @@
                 "200":{
                 "description":"response",
                   "schema":{
-                    "$ref":"#definitions/usuario"
+                    "$ref":"#/definitions/usuario"
 
                   }
               }
