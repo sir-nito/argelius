@@ -56,8 +56,7 @@ function actualizar(req, res) {
 
 
 function eliminar(req, res) {
-    var usuarioId = req.user.sub;
-    var marcadorId = req.params.id;
+    var usuarioId = req.params.id;
 
     usuarios.find({ 'usuario': usuarioId}).remove((err) => {
         if (err) return res.status(500).send({ message: 'error al dejar de eliminar' });
