@@ -22,7 +22,6 @@
             "post": {
                 "tags": ["usuario"],
                 "description": "what this API does",
-                "operationId": "for the URL",
                 "produces": [
                     "application/json"
                 ],
@@ -49,7 +48,7 @@
             "post": {
                 "tags": ["lginUsuario"],
                 "description": "what this API does",
-                "operationId": "for the URL",
+                "operationId": "for Juanito" 
                 "produces": [
                     "application/json"
                 ],
