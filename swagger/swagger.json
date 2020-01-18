@@ -157,7 +157,7 @@
                     "name": "idUsuario",
                     "in": "path",
                     "description": "ID e",
-                    "required": true,
+                    "required": false,
                     "type": "string"
                 }],
                 "responses": {
@@ -182,7 +182,7 @@
                     "name": "idUsuario",
                     "in": "path",
                     "description": "ID e",
-                    "required": true,
+                    "required": false,
                     "type": "string"
                 }],
                 "responses": {
