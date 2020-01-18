@@ -172,7 +172,7 @@
             }
         },
         "/user/{idUsuario}": {
-            "put": {
+            "get": {
                 "description": "regresa al usuario principal",
                 "operationId": "encuentra a usuario que inicia session",
                 "produces": [
