@@ -253,7 +253,7 @@ function getImageFile(req, res) {
 
 function getUser(req, res) {
     var userId = req.params.id;
-    User.findOne({ _id: userId }, (err, user) => {
+    User.findOne({ _id: ObjectId(userId) }, (err, user) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' });
         if (!user) return res.status(404).send({ message: 'el usuario no existe' });
 
