@@ -20,7 +20,7 @@
         "/registrar": {
             "post": {
                 "tags": ["usuario"],
-                "description": "what this API does", 
+                "description": "what this API does",
                 "operationId": "register",
                 "produces": [
                     "application/json"
@@ -47,7 +47,7 @@
         "/Iniciar-Sesion": {
             "post": {
                 "tags": ["lginUsuario"],
-                "description": "what this API does",
+                "description": "Iniciar session",
                 "operationId": "login",
                 "produces": [
                     "application/json"
@@ -74,7 +74,7 @@
 
         "/eliminar/{id}": {
             "delete": {
-                "description": "Deletes a something",
+                "description": "elimina los usuarios de negocio",
                 "operationId": "delete",
                 "produces": [
                     "application/json"
@@ -98,7 +98,7 @@
         },
         "/obtener-usuarios/{pag}": {
             "get": {
-                "description": "Returns the status of something",
+                "description": "regresa a los usuarios de negocio",
                 "operationId": "findById",
                 "produces": [
                     "application/json"
@@ -106,8 +106,8 @@
                 "parameters": [{
                     "name": "pag",
                     "in": "path",
-                    "description": "path", 
-                    "required" :false, 
+                    "description": "path",
+                    "required": false,
                     "type": "integer"
                 }],
                 "responses": {
@@ -122,7 +122,11 @@
         },
         "/actualizar/{idUsuario}": {
             "put": {
-
+                "description": "actualiza al usuario de negocio",
+                "operationId": "ActualizarUsuario",
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [{
                     "name": "idUsuario",
                     "in": "path",
@@ -130,19 +134,102 @@
                     "required": true,
                     "type": "integer"
                 }],
-              "responses":{
-                "200":{
-                "description":"response",
-                  "schema":{
-                    "$ref":"#/definitions/usuario"
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/usuario"
 
-                  }
-              }
-              }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/obtenerUsuarioByID/{idUsuario}": {
+            "get": {
+                "description": "regresa al usuario de negocio por el id",
+                "operationId": "encontrar por id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "idUsuario",
+                    "in": "path",
+                    "description": "ID e",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/usuario"
+
+                        }
+                    }
+                }
+            }
+        },
+        "/user/{idUsuario}": {
+            "put": {
+                "description": "regresa al usuario principal",
+                "operationId": "encuentra a usuario que inicia session",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "idUsuario",
+                    "in": "path",
+                    "description": "ID e",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/usuarioAplicacion"
+
+                        }
+                    }
+                }
             }
         }
     },
     "definitions": {
+        "usuarioAplicacion": {
+            "type": "object",
+            "properties": {
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_paterno": {
+                    "type": "string"
+                },
+                "apellido_materno": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "google": {
+                    "type": "string"
+                },
+                "correo": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "imagen": {
+
+                }
+            }
+        },
         "usuario": {
             "type": "object",
             "properties": {
@@ -166,7 +253,7 @@
         "loginUsuario": {
             "type": "object",
             "properties": {
-              "correo": {
+                "correo": {
                     "type": "string"
                 },
                 "password": {
@@ -203,26 +290,26 @@
             }
         },
         "getRes": {
-            "type": "array", 
-            "items" :{
-            "type" :"object", 
-            "properties": {
-                "nombre": {
-                    "type": "string"
-                },
-                "apellido_paterno": {
-                    "type": "string"
-                },
-                "apellido_materno": {
-                    "type": "string"
-                },
-                "edad": {
-                    "type": "integer"
-                },
-                "correo": {
-                    "type": "string"
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "nombre": {
+                        "type": "string"
+                    },
+                    "apellido_paterno": {
+                        "type": "string"
+                    },
+                    "apellido_materno": {
+                        "type": "string"
+                    },
+                    "edad": {
+                        "type": "integer"
+                    },
+                    "correo": {
+                        "type": "string"
+                    }
                 }
-              } 
             }
         },
         "400error": {
