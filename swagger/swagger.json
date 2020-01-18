@@ -84,7 +84,7 @@
                     "in": "path",
                     "description": "ID to remove",
                     "required": true,
-                    "type": "integer"
+                    "type": "string"
                 }],
                 "responses": {
                     "200": {
@@ -132,7 +132,7 @@
                     "in": "path",
                     "description": "ID e",
                     "required": true,
-                    "type": "integer"
+                    "type": "string"
                 }],
                 "responses": {
                     "200": {
@@ -158,7 +158,7 @@
                     "in": "path",
                     "description": "ID e",
                     "required": true,
-                    "type": "integer"
+                    "type": "string"
                 }],
                 "responses": {
                     "200": {
@@ -172,7 +172,7 @@
             }
         },
         "/user/{idUsuario}": {
-            "put": {
+            "get": {
                 "description": "regresa al usuario principal",
                 "operationId": "encuentra a usuario que inicia session",
                 "produces": [
@@ -183,7 +183,7 @@
                     "in": "path",
                     "description": "ID e",
                     "required": true,
-                    "type": "integer"
+                    "type": "string"
                 }],
                 "responses": {
                     "200": {
