@@ -91,7 +91,7 @@ function obtener(req, res) {
 function obtenerUsuarioByID(req, res) {
 
     var userId = req.params.id;
-    usuarios.findOne({ _id: ObjectId(userId) }, (err, user) => {
+    usuarios.findOne({ _id: 'ObjectId' (userId) }, (err, user) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' });
         if (!user) return res.status(404).send({ message: 'el usuario no existe' });
 
