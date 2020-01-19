@@ -185,7 +185,7 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "idUsuario",
+                    "name": "id",
                     "in": "body",
                     "description": "ID e",
                     "required": true,
