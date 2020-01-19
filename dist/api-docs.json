@@ -80,11 +80,13 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "id",
+                    "name": "Job Parameters",
                     "in": "body",
-                    "description": "ID to remove",
+                    "description": "Job to add to the database",
                     "required": true,
-                    "type": "string"
+                    "schema": {
+                        "$ref": "#/definitions/id"
+                    }
                 }],
                 "responses": {
                     "200": {
@@ -104,11 +106,13 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "pag",
+                    "name": "Job Parameters",
                     "in": "body",
-                    "description": "body",
-                    "required": false,
-                    "type": "integer"
+                    "description": "Job to add to the database",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/pag"
+                    }
                 }],
                 "responses": {
                     "200": {
@@ -156,7 +160,7 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "idUsuario",
+                    "name": "id",
                     "in": "body",
                     "description": "ID e",
                     "required": true,

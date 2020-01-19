@@ -72,7 +72,7 @@
             }
         },
 
-        "/eliminar/{id}": {
+        "/eliminar": {
             "delete": {
                 "description": "elimina los usuarios de negocio",
                 "operationId": "delete",
@@ -80,11 +80,13 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "ID to remove",
+                    "name": "Job Parameters",
+                    "in": "body",
+                    "description": "Job to add to the database",
                     "required": true,
-                    "type": "string"
+                    "schema": {
+                        "$ref": "#/definitions/id"
+                    }
                 }],
                 "responses": {
                     "200": {
@@ -96,7 +98,7 @@
                 }
             }
         },
-        "/obtener-usuarios/{pag}": {
+        "/obtener-usuarios": {
             "get": {
                 "description": "regresa a los usuarios de negocio",
                 "operationId": "findById",
@@ -104,11 +106,13 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "pag",
-                    "in": "path",
-                    "description": "path",
-                    "required": false,
-                    "type": "integer"
+                    "name": "Job Parameters",
+                    "in": "body",
+                    "description": "Job to add to the database",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/pag"
+                    }
                 }],
                 "responses": {
                     "200": {
@@ -120,7 +124,7 @@
                 }
             }
         },
-        "/actualizar/{idUsuario}": {
+        "/actualizar": {
             "put": {
                 "description": "actualiza al usuario de negocio",
                 "operationId": "ActualizarUsuario",
@@ -128,8 +132,36 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "idUsuario",
-                    "in": "path",
+                    "name": "Job Parameters",
+                    "in": "body",
+                    "description": "Job to add to the database",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/usuarioActualiza"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "response",
+                        "schema": {
+                            "$ref": "#/definitions/usuario"
+
+                        }
+                    }
+                }
+            }
+        },
+
+        "/obtenerUsuarioByID": {
+            "get": {
+                "description": "regresa al usuario de negocio por el id",
+                "operationId": "encontrar por id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "body",
                     "description": "ID e",
                     "required": true,
                     "type": "string"
@@ -145,33 +177,7 @@
                 }
             }
         },
-
-        "/obtenerUsuarioByID/{idUsuario}": {
-            "get": {
-                "description": "regresa al usuario de negocio por el id",
-                "operationId": "encontrar por id",
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [{
-                    "name": "idUsuario",
-                    "in": "path",
-                    "description": "ID e",
-                    "required": false,
-                    "type": "string"
-                }],
-                "responses": {
-                    "200": {
-                        "description": "response",
-                        "schema": {
-                            "$ref": "#/definitions/usuario"
-
-                        }
-                    }
-                }
-            }
-        },
-        "/user/{idUsuario}": {
+        "/user": {
             "get": {
                 "description": "regresa al usuario principal",
                 "operationId": "encuentra a usuario que inicia session",
@@ -180,9 +186,9 @@
                 ],
                 "parameters": [{
                     "name": "idUsuario",
-                    "in": "path",
+                    "in": "body",
                     "description": "ID e",
-                    "required": false,
+                    "required": true,
                     "type": "string"
                 }],
                 "responses": {
@@ -230,9 +236,38 @@
                 }
             }
         },
+        "page": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
         "usuario": {
             "type": "object",
             "properties": {
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_paterno": {
+                    "type": "string"
+                },
+                "apellido_materno": {
+                    "type": "string"
+                },
+                "edad": {
+                    "type": "integer"
+                },
+                "correo": {
+                    "type": "string"
+                }
+            }
+        },
+        "usuarioActualiza": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
                 "nombre": {
                     "type": "string"
                 },
