@@ -9,7 +9,7 @@ var md_upload = multipart({ uploadDir: './uploads/usuario' });
 api.post('/registrar_usuario', UserController.Registrar);
 api.get('/validar/:id', UserController.validarcuenta);
 api.post('/Iniciar-Sesion', UserController.IniciarSession);
-api.get('/user', UserController.getUser);
+api.get('/user/:id', UserController.getUser);
 api.put('/update-user/:id', UserController.updateUser);
 api.post('/upload-image-user/:id', [middleware.ensureAuth, md_upload], UserController.uploadImage);
 api.get('/get-image-user/:imageFile', UserController.getImageFile);
