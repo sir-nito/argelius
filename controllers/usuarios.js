@@ -90,7 +90,7 @@ function obtener(req, res) {
 
 function obtenerUsuarioByID(req, res) {
 
-    var userId = req.path.id;
+    var userId = req.params.id;
     usuarios.findById(userId, (err, user) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' });
         if (!user) return res.status(404).send({ message: 'el usuario no existe' });
