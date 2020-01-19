@@ -103,7 +103,7 @@
                 "description": "regresa a los usuarios de negocio",
                 "operationId": "findById",
                 "produces": [
-                    "application/json"
+                    "application/x-www-form-urlencoded"
                 ],
                 "parameters": [{
                     "name": "Job Parameters",
@@ -157,7 +157,7 @@
                 "description": "regresa al usuario de negocio por el id",
                 "operationId": "encontrar por id",
                 "produces": [
-                    "application/json"
+                    "application/x-www-form-urlencoded"
                 ],
                 "parameters": [{
                     "name": "id",
@@ -182,7 +182,7 @@
                 "description": "regresa al usuario principal",
                 "operationId": "encuentra a usuario que inicia session",
                 "produces": [
-                    "application/json"
+                    "application/x-www-form-urlencoded"
                 ],
                 "parameters": [{
                     "name": "id",
@@ -237,7 +237,7 @@
             }
         },
         "page": {
-            "type": "string"
+            "type": "integer"
         },
         "id": {
             "type": "string"
