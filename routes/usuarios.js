@@ -7,8 +7,8 @@ var multipart = require('connect-multiparty');
 var md_upload = multipart({ uploadDir: './uploads/usuario' });
 
 api.post('/registrar', UserController.agregar);
-api.get('/obtenerUsuarioByID/:id', UserController.obtenerUsuarioByID);
-api.put('/actualizar/:id', UserController.actualizar);
-api.get('/obtener-usuarios/:id?', UserController.obtener);
-api.delete('/eliminar/:id', UserController.eliminar);
+api.get('/obtenerUsuarioByID', UserController.obtenerUsuarioByID);
+api.put('/actualizar', UserController.actualizar);
+api.get('/obtener-usuarios', UserController.obtener);
+api.delete('/eliminar', UserController.eliminar);
 module.exports = api;

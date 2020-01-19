@@ -72,7 +72,7 @@
             }
         },
 
-        "/eliminar/{id}": {
+        "/eliminar": {
             "delete": {
                 "description": "elimina los usuarios de negocio",
                 "operationId": "delete",
@@ -81,7 +81,7 @@
                 ],
                 "parameters": [{
                     "name": "id",
-                    "in": "path",
+                    "in": "body",
                     "description": "ID to remove",
                     "required": true,
                     "type": "string"
@@ -96,7 +96,7 @@
                 }
             }
         },
-        "/obtener-usuarios/{pag}": {
+        "/obtener-usuarios": {
             "get": {
                 "description": "regresa a los usuarios de negocio",
                 "operationId": "findById",
@@ -105,8 +105,8 @@
                 ],
                 "parameters": [{
                     "name": "pag",
-                    "in": "path",
-                    "description": "path",
+                    "in": "body",
+                    "description": "body",
                     "required": false,
                     "type": "integer"
                 }],
@@ -120,7 +120,7 @@
                 }
             }
         },
-        "/actualizar/{idUsuario}": {
+        "/actualizar": {
             "put": {
                 "description": "actualiza al usuario de negocio",
                 "operationId": "ActualizarUsuario",
@@ -128,17 +128,19 @@
                     "application/json"
                 ],
                 "parameters": [{
-                    "name": "idUsuario",
-                    "in": "path",
-                    "description": "ID e",
+                    "name": "Job Parameters",
+                    "in": "body",
+                    "description": "Job to add to the database",
                     "required": true,
-                    "type": "string"
+                    "schema": {
+                        "$ref": "#/definitions/usuario"
+                    }
                 }],
                 "responses": {
                     "200": {
                         "description": "response",
                         "schema": {
-                            "$ref": "#/definitions/usuario"
+                            "$ref": "#/definitions/usuarioActualiza"
 
                         }
                     }
@@ -146,7 +148,7 @@
             }
         },
 
-        "/obtenerUsuarioByID/{idUsuario}": {
+        "/obtenerUsuarioByID": {
             "get": {
                 "description": "regresa al usuario de negocio por el id",
                 "operationId": "encontrar por id",
@@ -155,7 +157,7 @@
                 ],
                 "parameters": [{
                     "name": "idUsuario",
-                    "in": "path",
+                    "in": "body",
                     "description": "ID e",
                     "required": true,
                     "type": "string"
@@ -171,7 +173,7 @@
                 }
             }
         },
-        "/user/{idUsuario}": {
+        "/user": {
             "get": {
                 "description": "regresa al usuario principal",
                 "operationId": "encuentra a usuario que inicia session",
@@ -180,7 +182,7 @@
                 ],
                 "parameters": [{
                     "name": "idUsuario",
-                    "in": "path",
+                    "in": "body",
                     "description": "ID e",
                     "required": true,
                     "type": "string"
@@ -230,9 +232,38 @@
                 }
             }
         },
+        "page": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
         "usuario": {
             "type": "object",
             "properties": {
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_paterno": {
+                    "type": "string"
+                },
+                "apellido_materno": {
+                    "type": "string"
+                },
+                "edad": {
+                    "type": "integer"
+                },
+                "correo": {
+                    "type": "string"
+                }
+            }
+        },
+        "usuarioActualiza": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
                 "nombre": {
                     "type": "string"
                 },

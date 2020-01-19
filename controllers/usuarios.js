@@ -29,7 +29,7 @@ function agregar(req, res) {
 }
 
 function actualizar(req, res) {
-    var userId = req.params.id;
+    var userId = req.body.id;
     var update = req.body;
 
     usuarios.find({
@@ -56,7 +56,7 @@ function actualizar(req, res) {
 
 
 function eliminar(req, res) {
-    var usuarioId = req.params.id;
+    var usuarioId = req.body.id;
 
     usuarios.find({ 'usuario': usuarioId }).remove((err) => {
         if (err) return res.status(500).send({ message: 'error al dejar de eliminar' });
@@ -67,8 +67,8 @@ function eliminar(req, res) {
 
 function obtener(req, res) {
     var page = 1;
-    if (req.params.page) {
-        page = req.params.page;
+    if (req.body.page) {
+        page = req.body.page;
     }
     var itemsPerPage = 10;
     usuarios.find().sort('').populate('usuarios').paginate(page, itemsPerPage,
@@ -90,7 +90,7 @@ function obtener(req, res) {
 
 function obtenerUsuarioByID(req, res) {
 
-    var userId = req.params.id;
+    var userId = req.body.id;
     usuarios.findById(userId, (err, user) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' });
         if (!user) return res.status(404).send({ message: 'el usuario no existe' });
