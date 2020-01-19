@@ -152,7 +152,7 @@
             }
         },
 
-        "/obtenerUsuarioByID": {
+        "/obtenerUsuarioByID/{id}": {
             "get": {
                 "description": "regresa al usuario de negocio por el id",
                 "operationId": "encontrar por id",
