@@ -133,14 +133,14 @@
                     "description": "Job to add to the database",
                     "required": true,
                     "schema": {
-                        "$ref": "#/definitions/usuario"
+                        "$ref": "#/definitions/usuarioActualiza"
                     }
                 }],
                 "responses": {
                     "200": {
                         "description": "response",
                         "schema": {
-                            "$ref": "#/definitions/usuarioActualiza"
+                            "$ref": "#/definitions/usuario"
 
                         }
                     }
