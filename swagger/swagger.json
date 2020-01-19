@@ -157,11 +157,11 @@
                 "description": "regresa al usuario de negocio por el id",
                 "operationId": "encontrar por id",
                 "produces": [
-                    "application/x-www-form-urlencoded"
+                    "application/json"
                 ],
                 "parameters": [{
                     "name": "id",
-                    "in": "body",
+                    "in": "path",
                     "description": "ID e",
                     "required": true,
                     "type": "string"

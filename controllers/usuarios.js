@@ -68,7 +68,7 @@ function eliminar(req, res) {
 function obtener(req, res) {
     var page = 1;
     if (req.body.page) {
-        page = req.body.page;
+        page = req.path.page;
     }
     var itemsPerPage = 10;
     usuarios.find().sort('').populate('usuarios').paginate(page, itemsPerPage,
