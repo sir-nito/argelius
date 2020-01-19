@@ -253,19 +253,10 @@ function getImageFile(req, res) {
 
 function getUser(req, res) {
     var userId = req.params.id;
-    User.findOne({
-        _id: {
-            $in: [
-
-                mongoose.Types.ObjectId(userId)
-
-            ]
-        }
-    }, (err, user) => {
+    User.findById(userId, (err, user) => {
         if (err) return res.status(500).send({ message: 'error en la peticion' });
         if (!user) return res.status(404).send({ message: 'el usuario no existe' });
-
-
+        return res.status(200).send(user);
 
     });
 }
